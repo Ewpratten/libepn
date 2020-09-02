@@ -32,6 +32,10 @@ public class QuaternionUtil {
         public String toString() {
             return String.format("<[%.4f, %.4f, %.4f]>", alpha, beta, gamma);
         }
+
+        public String toStringDegrees() {
+            return String.format("<[%.4f, %.4f, %.4f]>", Math.toDegrees(alpha), Math.toDegrees(beta), Math.toDegrees(gamma));
+        }
     }
 
     /**
