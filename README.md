@@ -2,8 +2,8 @@
 
 <!-- Badges -->
 ![Build Library](https://github.com/Ewpratten/libepn/workflows/Build%20Library/badge.svg) 
-[![Packages](https://img.shields.io/badge/GitHub%20Packages-1.0.0-blue)](https://github.com/Ewpratten/libepn/packages)
-[![Packages](https://img.shields.io/badge/Release-1.0.0-blue)](https://github.com/Ewpratten/libepn/releases/latest)
+[![Packages](https://img.shields.io/badge/GitHub%20Packages-1.1.0-blue)](https://github.com/Ewpratten/libepn/packages)
+[![Packages](https://img.shields.io/badge/Release-1.1.0-blue)](https://github.com/Ewpratten/libepn/releases/latest)
 [![Documentation](https://img.shields.io/badge/-documentation-blue)](https://ewpratten.retrylife.ca/libepn)
 ---
 
@@ -59,7 +59,7 @@ System.out.println(p.getNormal());
 
 ## EPN4FRC
 
-This library also contains a sub-library called EPN4FRC. This is a small binding between LibEPN and [WPILib](https://github.com/wpilibsuite/allwpilib/)'s [Pose2d](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Pose2d.html) coordinate system for the *FIRST* Robotics Competition. EPN4FRC API documentation can be found [here](https://ewpratten.retrylife.ca/libepn/ca/retrylife/libepn/epn4frc/package-summary.html).
+This library also contains a sub-library called EPN4FRC. This is a small binding between LibEPN and [WPILib](https://github.com/wpilibsuite/allwpilib/)'s [Pose2d](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Pose2d.html) coordinate system for the *FIRST* Robotics Competition. EPN4FRC in-source documentation can be found [here](https://github.com/Ewpratten/libepn/blob/master/epn4frc/src/main/java/ca/retrylife/libepn/epn4frc/EPN4FRC.java).
 
 ## Credits
 
