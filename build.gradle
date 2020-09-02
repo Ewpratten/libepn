@@ -6,7 +6,7 @@ plugins {
 
 apply from: "./simpleunittest.gradle"
 
-project.version = "0.2.1"
+project.version = "1.0.0"
 
 repositories {
     jcenter()
