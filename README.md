@@ -7,7 +7,7 @@
 [![Documentation](https://img.shields.io/badge/-documentation-blue)](https://ewpratten.retrylife.ca/libepn)
 ---
 
-LibEPN is a Java library designed to provide an easy-to-use interface for 3D position and orientation. The library is heavily dependant on [Quaternions](https://en.wikipedia.org/wiki/Quaternion), and makes use of the following dependencies:
+LibEPN (*Easy Pose Notation*) is a Java library designed to provide an easy-to-use interface for 3D position and orientation. The library is heavily dependant on [Quaternions](https://en.wikipedia.org/wiki/Quaternion), and makes use of the following dependencies:
 
  - [Apache Commons Math](https://commons.apache.org/proper/commons-math/)
  - [Efficient Java Matrix Library](http://ejml.org)
@@ -38,7 +38,10 @@ The following is a basic usage example. See the [JavaDoc](https://ewpratten.retr
 
 ```java
 // Create a pose at (10,0,0) rotated around the Z axis to the left by 45 degrees
-Pose p = new Pose(new SimpleMatrix(new double[][]{{10,0,0}}), QuaternionUtil.quaternionFromEulerAngles(Math.toRadians(45), 0, 0));
+Pose p = new Pose(
+    new SimpleMatrix(new double[][]{{10,0,0}}), 
+    QuaternionUtil.quaternionFromEulerAngles(Math.toRadians(45), 0, 0)
+);
 
 // Print the pose's quaternion
 System.out.println(p.getRotation());
