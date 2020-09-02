@@ -11,6 +11,7 @@ public class DirectionUtilTest {
 
     @Test
     public void testLookAt() {
+        // This is visualized here: https://www.math3d.org/wYYwSZcR
 
         // Create the current position
         SimpleMatrix currentPosition = new SimpleMatrix(new double[][] { { 0, 0, 0 } });

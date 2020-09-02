@@ -1,6 +1,7 @@
 package ca.retrylife.libepn.util;
 
 import org.apache.commons.math3.complex.Quaternion;
+import org.ejml.simple.SimpleMatrix;
 
 /**
  * Utilities for working with quaternions
@@ -33,8 +34,26 @@ public class QuaternionUtil {
             return String.format("<[%.4f, %.4f, %.4f]>", alpha, beta, gamma);
         }
 
+        /**
+         * Get a string containing the angles in degrees
+         * 
+         * @return Angles in degrees string
+         */
         public String toStringDegrees() {
-            return String.format("<[%.4f, %.4f, %.4f]>", Math.toDegrees(alpha), Math.toDegrees(beta), Math.toDegrees(gamma));
+            return String.format("<[%.4f, %.4f, %.4f]>", Math.toDegrees(alpha), Math.toDegrees(beta),
+                    Math.toDegrees(gamma));
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof EulerAngles) {
+                return (((EulerAngles) obj).alpha == this.alpha) && (((EulerAngles) obj).beta == this.beta)
+                        && (((EulerAngles) obj).gamma == this.gamma);
+            }
+            return false;
         }
     }
 
@@ -114,6 +133,40 @@ public class QuaternionUtil {
 
         // Return the angles
         return new EulerAngles(alpha, beta, gamma);
+    }
+
+    /**
+     * Create a new vector that is the result of a vector times a quaternion. This
+     * is a direct translation of the operator* function from Unity's Quaternion
+     * class.
+     * 
+     * @param vec A vector
+     * @param q   A quaternion
+     * @return A rotated version of the vector
+     */
+    public static SimpleMatrix rotateVectorByQuaternion(SimpleMatrix vec, Quaternion q) {
+
+        // Calculate coeffs
+        double num = q.getQ1() * 2.0;
+        double num2 = q.getQ2() * 2.0;
+        double num3 = q.getQ3() * 2.0;
+        double num4 = q.getQ1() * num;
+        double num5 = q.getQ2() * num2;
+        double num6 = q.getQ3() * num3;
+        double num7 = q.getQ1() * num2;
+        double num8 = q.getQ1() * num3;
+        double num9 = q.getQ2() * num3;
+        double num10 = q.getQ0() * num;
+        double num11 = q.getQ0() * num2;
+        double num12 = q.getQ0() * num3;
+
+        // Determine new X Y and Z components of vector
+        double x = (1.0 - (num5 + num6)) * vec.get(0) + (num7 - num12) * vec.get(1) + (num8 + num11) * vec.get(2);
+        double y = (num7 + num12) * vec.get(0) + (1.0 - (num4 + num6)) * vec.get(1) + (num9 - num10) * vec.get(2);
+        double z = (num8 - num11) * vec.get(0) + (num9 + num10) * vec.get(1) + (1.0 - (num4 + num5)) * vec.get(2);
+
+        // Build new vector
+        return new SimpleMatrix(new double[][] { { x, y, z } });
     }
 
 }
