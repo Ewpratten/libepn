@@ -53,7 +53,8 @@ task buildRelease(type: Jar){
 
     dependsOn build
 
-    from sourceSets.main.allSource, { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    from sourceSets.main.allSource, configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    with jar
 
 }
 

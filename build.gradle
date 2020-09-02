@@ -89,6 +89,7 @@ task buildRelease(type: Jar){
     dependsOn build
     dependsOn javadocCustom
 
-    from file("build/docs/javadoc/"), { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }, sourceSets.main.allSource
+    from file("build/docs/javadoc/"), configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) }, sourceSets.main.allSource
+    with jar
 
 }
