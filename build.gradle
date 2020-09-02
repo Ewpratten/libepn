@@ -6,7 +6,7 @@ plugins {
 
 apply from: "./simpleunittest.gradle"
 
-project.version = "1.0.0"
+project.version = "0.2.1"
 
 repositories {
     jcenter()
@@ -47,4 +47,24 @@ publishing {
 
         }
     }
+}
+
+task javadocCustom(type: Javadoc, description: 'Generate javadocs from all child projects as if it was a single project', group: 'Documentation'){
+    title = "$project.name $version API"
+    options.addBooleanOption('-no-module-directories', true)
+	options.author true
+
+    options.links 'http://docs.spring.io/spring/docs/4.3.x/javadoc-api/', 'http://docs.oracle.com/javase/8/docs/api/', 'http://docs.spring.io/spring-ws/docs/2.3.0.RELEASE/api/', 'http://docs.spring.io/spring-security/site/docs/4.0.4.RELEASE/apidocs/', 'https://commons.apache.org/proper/commons-math/javadocs/api-3.4/', 'http://ejml.org/javadoc/'
+    
+    options.addStringOption 'Xdoclint:none', '-quiet'
+
+}
+
+task buildRelease(type: Jar){
+
+    dependsOn build
+    dependsOn javadocCustom
+
+    from file("build/docs/javadoc/"), { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }, sourceSets.main.allSource
+
 }
