@@ -8,3 +8,5 @@
  */
 
 rootProject.name = 'easy-pose-notation'
+
+include ":epn4frc"

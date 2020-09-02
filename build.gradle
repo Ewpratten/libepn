@@ -68,6 +68,18 @@ task javadocCustom(type: Javadoc, description: 'Generate javadocs from all child
 
     }
 
+    subprojects.each { p ->
+        p.tasks.withType(Javadoc).each { javadocTask ->
+        
+            // Add the task sources to the main JavaDoc
+            source += javadocTask.source
+            classpath += javadocTask.classpath
+            excludes += javadocTask.excludes
+            includes += javadocTask.includes
+
+        }
+    }
+
     destinationDir = file("$buildDir/docs/javadoc")
 
 }

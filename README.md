@@ -57,6 +57,10 @@ System.out.println(p.getNormal());
 
 ```
 
+## EPN4FRC
+
+This library also contains a sub-library called EPN4FRC. This is a small binding between LibEPN and [WPILib](https://github.com/wpilibsuite/allwpilib/)'s [Pose2d](https://first.wpi.edu/FRC/roborio/release/docs/java/edu/wpi/first/wpilibj/geometry/Pose2d.html) coordinate system for the *FIRST* Robotics Competition. EPN4FRC API documentation can be found [here](https://ewpratten.retrylife.ca/libepn/ca/retrylife/libepn/epn4frc/package-summary.html).
+
 ## Credits
 
 This library was heavily supported by the following sources:
