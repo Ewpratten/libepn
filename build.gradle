@@ -4,6 +4,8 @@ plugins {
     id 'maven-publish'
 }
 
+apply from: "./simpleunittest.gradle"
+
 project.version = "1.0.0"
 
 repositories {
