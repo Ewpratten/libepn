@@ -16,8 +16,9 @@ I use this library in various personal and school projects relating to pose esti
 
 ## Installation
 
-LibEPN can be installed via:
+LibEPN can be installed from:
 
+ - [My maven server](https://ultralight.retrylife.ca/?a=libepn&g=ca.retrylife) (recommended)
  - [The GitHub Packages repository](https://github.com/Ewpratten/libepn/packages)
  - [JitPack](https://jitpack.io/#ewpratten/libepn)
  - [A JAR file](https://github.com/Ewpratten/libepn/releases/latest)
