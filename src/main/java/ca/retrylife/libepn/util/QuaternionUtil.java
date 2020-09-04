@@ -20,8 +20,8 @@ public class QuaternionUtil {
          * Construct an EulerAngles object
          * 
          * @param alpha Alpha / Yaw / Z angle
-         * @param beta  Beta / Pitch / Y angle
-         * @param gamma Gamma / Roll / X angle
+         * @param beta  Beta / Pitch / X angle
+         * @param gamma Gamma / Roll / Y angle
          */
         public EulerAngles(double alpha, double beta, double gamma) {
             this.alpha = alpha;
@@ -62,20 +62,20 @@ public class QuaternionUtil {
      * 
      * @param angles Angles in radians
      * @return Generated Quaternion
-     */
+     */og [Google]
     public static Quaternion quaternionFromEulerAngles(EulerAngles angles) {
         return quaternionFromEulerAngles(angles.alpha, angles.beta, angles.gamma);
     }
 
     /**
-     * Create a quaternion from Euler angles. (ZYX)
+     * Create a quaternion from Euler angles. (ZXY)
      * 
      * This function uses an algorithm from Wikipedia:
      * https://en.wikipedia.org/wiki/Conversion_between_quaternions_and_Euler_angles#Euler_Angles_to_Quaternion_Conversion
      * 
      * @param alpha Alpha / Yaw / Z angle (radians)
-     * @param beta  Beta / Pitch / Y angle (radians)
-     * @param gamma Gamma / Roll / X angle (radians)
+     * @param beta  Beta / Pitch / X angle (radians)
+     * @param gamma Gamma / Roll / Y angle (radians)
      * @return Generated Quaternion
      */
     public static Quaternion quaternionFromEulerAngles(double alpha, double beta, double gamma) {

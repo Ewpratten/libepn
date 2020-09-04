@@ -27,13 +27,13 @@ LibEPN can be installed from:
 
 The following should be noted when working with coordinates:
 
- - `QuaternionUtil.quaternionFromEulerAngles` and `QuaternionUtil.EulerAngles` take in coordinates in the order `Z, Y, X`.
- - `alpha`, `beta`, and `gamma` refer respectively to the `Z`, `Y` and `X` axes of rotation.
+ - `alpha`, `beta`, and `gamma` refer respectively to the `Z`, `X` and `Y` axes of rotation.
  - The coordinate system assumes that:
-   - If you are at `(x: 0, y: x, z: 1)` facing `(0,0,0)`, the `Z` axis will be coming "towards" you, `X` will be increasing to your right, and `Y` will be increasing towards the sky.
+   - If you are at `(x: 0, y: 1, z: 0)` facing `(0,0,0)`, the `Y` axis will be coming "towards" you, `X` will be increasing to your left, and `Z` will be increasing towards the sky.
  - All angles will increase to the left around any axis assuming you are in line with the axis, looking at `(0,0,0)`
+ - All coordinate and angle systems follow that of Google's device orientation specification, and the world frame coordinate system used by MIT's Drake.
 
-![Orientation graphic](./assets/libepn-orientation.png)
+![Orientation graphic](./assets/standard-orientation.png)
 
 ## Basic usage
 

@@ -27,10 +27,10 @@ public final class Pose {
      * Create a pose at a position with a single axis of rotation.
      * 
      * @param position Position in 3D space
-     * @param yAngle   Angle in radians around the Y axis
+     * @param yAngle   Angle in radians around the Z axis
      */
-    public Pose(SimpleMatrix position, double yAngle) {
-        this(position, new EulerAngles(0, yAngle, 0));
+    public Pose(SimpleMatrix position, double zAngle) {
+        this(position, new EulerAngles(zAngle, 0, 0));
     }
 
     /**
