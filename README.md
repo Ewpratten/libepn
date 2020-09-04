@@ -2,7 +2,7 @@
 
 <!-- Badges -->
 ![Build Library](https://github.com/Ewpratten/libepn/workflows/Build%20Library/badge.svg) 
-[![Packages](https://img.shields.io/badge/GitHub%20Packages-1.1.0-blue)](https://github.com/Ewpratten/libepn/packages)
+[![Maven Repository](https://ultralight.retrylife.ca:/api/artifact/ca.retrylife/libepn/shield?d=ultralight.retrylife.ca)](https://ultralight.retrylife.ca/?a=libepn&g=ca.retrylife)
 [![Packages](https://img.shields.io/badge/Release-1.1.0-blue)](https://github.com/Ewpratten/libepn/releases/latest)
 [![Documentation](https://img.shields.io/badge/-documentation-blue)](https://ewpratten.retrylife.ca/libepn)
 ---
