@@ -17,7 +17,7 @@ java_library(
     deps = [
         "@maven//:org_apache_commons_commons_math3",
         "@maven//:org_ejml_ejml_all",
-        "@maven//:org_ejml_ejml_simple",
+        "@maven//:org_ejml_ejml_simple",        
     ],
 )
 

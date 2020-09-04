@@ -19,11 +19,13 @@ maven_install(
         "junit:junit:4.13",
         "org.ejml:ejml-simple:0.39",
         "org.ejml:ejml-all:0.39",
+        "edu.wpi.first.wpilibj:wpilibj-java:2020.3.2",
     ],
     fetch_sources = True,
     repositories = [
         "https://ultralight.retrylife.ca:/maven",
         "https://jcenter.bintray.com/",
+        "https://frcmaven.wpi.edu/artifactory/release/",
     ],
 )
 
