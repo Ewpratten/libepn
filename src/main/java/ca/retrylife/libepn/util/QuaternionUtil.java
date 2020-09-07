@@ -62,7 +62,7 @@ public class QuaternionUtil {
      * 
      * @param angles Angles in radians
      * @return Generated Quaternion
-     */og [Google]
+     */
     public static Quaternion quaternionFromEulerAngles(EulerAngles angles) {
         return quaternionFromEulerAngles(angles.alpha, angles.beta, angles.gamma);
     }
