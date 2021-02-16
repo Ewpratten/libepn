@@ -1,10 +1,7 @@
 ![LibEPN Logo](./assets/libepn.png)
 
 <!-- Badges -->
-![Build Library](https://github.com/Ewpratten/libepn/workflows/Build%20Library/badge.svg) 
-[![Maven Repository](https://ultralight.retrylife.ca:/api/artifact/ca.retrylife/libepn/shield?d=ultralight.retrylife.ca)](https://ultralight.retrylife.ca/?a=libepn&g=ca.retrylife)
-[![Packages](https://img.shields.io/badge/Release-1.1.0-blue)](https://github.com/Ewpratten/libepn/releases/latest)
-[![Documentation](https://img.shields.io/badge/-documentation-blue)](https://ewpratten.retrylife.ca/libepn)
+[![Documentation](https://img.shields.io/badge/-documentation-blue)](https://ewpratten.retrylife.ca/libepn) ![Build library](https://github.com/Ewpratten/libepn/workflows/Build%20library/badge.svg)
 ---
 
 LibEPN (*Easy Pose Notation*) is a Java library designed to provide an easy-to-use interface for 3D position and orientation. The library is heavily dependant on [Quaternions](https://en.wikipedia.org/wiki/Quaternion), and makes use of the following dependencies:
@@ -14,14 +11,28 @@ LibEPN (*Easy Pose Notation*) is a Java library designed to provide an easy-to-u
 
 I use this library in various personal and school projects relating to pose estimation, robotics, and computer vision. 
 
-## Installation
+## Using in your project
 
-LibEPN can be installed from:
+**Step 1.** Add the RetryLife maven server to your `build.gradle` file:
 
- - [My maven server](https://ultralight.retrylife.ca/?a=libepn&g=ca.retrylife) (recommended)
- - [The GitHub Packages repository](https://github.com/Ewpratten/libepn/packages)
- - [JitPack](https://jitpack.io/#ewpratten/libepn)
- - [A JAR file](https://github.com/Ewpratten/libepn/releases/latest)
+```groovy
+repositories {
+    maven { 
+        name 'retrylife-release'
+        url 'https://release.maven.retrylife.ca/' 
+    }
+}
+```
+
+**Step 2.** Add this library as a dependency:
+
+```groovy
+dependencies {
+    implementation 'ca.retrylife:easy-pose-notation:1.+'
+    implementation 'ca.retrylife:easy-pose-notation:1.+:sources'
+    implementation 'ca.retrylife:easy-pose-notation:1.+:javadoc'
+}
+```
 
 ## Coordinates
 
