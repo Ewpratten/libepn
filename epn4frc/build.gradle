@@ -4,8 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-apply from: "../simpleunittest.gradle"
-
 project.version = project(":").version
 
 repositories {
@@ -26,38 +24,3 @@ dependencies {
 
 }
 
-publishing {
-    repositories {
-        maven {
-            name = "GitHubPackages"
-            url = uri("https://maven.pkg.github.com/ewpratten/libepn")
-            credentials {
-                username = project.findProperty("gh_user") ?: System.getenv("GHP_USERNAME")
-                password = project.findProperty("gh_packages_token") ?: System.getenv("GHP_TOKEN")
-            }
-        }
-    }
-    publications {
-        gpr(MavenPublication) {
-            groupId = 'ca.retrylife'
-            artifactId = 'epn4frc'
-            version = project.version
-
-            from components.java
-
-        }
-    }
-}
-
-task buildRelease(type: Jar){
-
-    dependsOn build
-
-    from sourceSets.main.allSource, configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
-    with jar
-
-}
-
-javadoc{
-    source = sourceSets.main.allJava
-}
