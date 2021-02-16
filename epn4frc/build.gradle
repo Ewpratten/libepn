@@ -20,7 +20,7 @@ dependencies {
     api  "edu.wpi.first.wpilibj:wpilibj-java:2020.3.2"
 
     // Use JUnit test framework
-    testImplementation 'junit:junit:4.13'
+    testImplementation 'junit:junit:4.13.2'
 
 }
 
