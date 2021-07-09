@@ -17,7 +17,7 @@ dependencies {
 
     // Matrix library
     compile group: 'org.ejml', name: 'ejml-simple', version: '0.39'
-    compile group: 'org.ejml', name: 'ejml-all', version: '0.39'
+    compile group: 'org.ejml', name: 'ejml-all', version: '0.41'
 
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13'
