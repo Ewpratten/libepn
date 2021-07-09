@@ -16,7 +16,7 @@ dependencies {
     api 'org.apache.commons:commons-math3:3.6.1'
 
     // Matrix library
-    compile group: 'org.ejml', name: 'ejml-simple', version: '0.39'
+    compile group: 'org.ejml', name: 'ejml-simple', version: '0.41'
     compile group: 'org.ejml', name: 'ejml-all', version: '0.39'
 
     // Use JUnit test framework
